@@ -223,8 +223,8 @@ private static final Logger processorLogger = LogManager.getLogger(WebTyphProces
 		webTyphName2NoDaoMySQLImpl.insertWebTyphName2Nos(webTyphName2NoList);
 		webTyphWarningDaoMySQLImpl.insertWebTyphWarnings(webTyphWarningList);
 		
-		webTyphName2NoDaoMSSQLImpl.insertWebTyphName2Nos(webTyphName2NoList);
-		webTyphWarningDaoMSSQLImpl.insertWebTyphWarnings(webTyphWarningList);
+//		webTyphName2NoDaoMSSQLImpl.insertWebTyphName2Nos(webTyphName2NoList);
+//		webTyphWarningDaoMSSQLImpl.insertWebTyphWarnings(webTyphWarningList);
 		
 	}
 	

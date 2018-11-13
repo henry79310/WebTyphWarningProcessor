@@ -16,7 +16,8 @@ public class WebTyphName2NoDaoMySQLImpl implements WebTyphName2NoDao{
 	private JdbcTemplate jdbcTemplate;
 	
 	private static final String INSERT_WEB_TYPH_NAME_2_NO_STATEMENT = 
-			"INSERT INTO WebTyphName2No (`TyphNo`, `TyphNameEng`, `TyphNameCht`) VALUES (?,?,?)";
+			"REPLACE INTO WebTyphName2No (TyphNo, TyphNameEng, TyphNameCht) " +
+		    "VALUES (?, ?, ?) ";
 	
 	@Override
 	public void insertWebTyphName2Nos(Set<WebTyphName2No> webTyphName2Nos) {

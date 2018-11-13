@@ -16,7 +16,8 @@ public class WebTyphWarningDaoMySQLImpl implements WebTyphWarningDao{
 	private JdbcTemplate jdbcTemplate;
 	
 	private static final String INSERT_WEB_TYPH_WARNING_STATEMENT = 
-			"INSERT INTO WebTyphWarning (`TyphName`, `AlarmDate`, `State`, `ModifyDate`) VALUES (?,?,?,?)";
+			"REPLACE INTO WebTyphWarning (`TyphName`, `AlarmDate`, `State`, `ModifyDate`) " +
+			"VALUES (?, ?, ?, ?)";
 	
 	@Override
 	public void insertWebTyphWarnings(Set<WebTyphWarning> webTyphWarnings) {

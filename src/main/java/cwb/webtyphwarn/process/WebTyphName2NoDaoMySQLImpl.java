@@ -35,5 +35,12 @@ public class WebTyphName2NoDaoMySQLImpl implements WebTyphName2NoDao{
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
+
+	@Override
+	public void deleteWebTyphName2Nos(Set<WebTyphName2No> webTyphName2Nos) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

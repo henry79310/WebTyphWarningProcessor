@@ -7,4 +7,6 @@ import cwb.webtyphwarn.model.WebTyphName2No;
 public interface WebTyphName2NoDao {
 
 	public void insertWebTyphName2Nos(Set<WebTyphName2No> webTyphName2Nos);
+	public void deleteWebTyphName2Nos(Set<WebTyphName2No> webTyphName2Nos);
+
 }

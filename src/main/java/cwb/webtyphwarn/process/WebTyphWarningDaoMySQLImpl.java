@@ -36,6 +36,13 @@ public class WebTyphWarningDaoMySQLImpl implements WebTyphWarningDao{
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
+
+	@Override
+	public void deleteWebTyphWarnings(Set<WebTyphWarning> webTyphWarnings) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

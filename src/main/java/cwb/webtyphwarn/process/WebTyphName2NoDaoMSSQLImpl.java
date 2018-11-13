@@ -13,6 +13,9 @@ import cwb.webtyphwarn.model.WebTyphName2No;
 public class WebTyphName2NoDaoMSSQLImpl implements WebTyphName2NoDao {
 
 private JdbcTemplate jdbcTemplate;
+
+	private static final String DELETE_WEB_TYPH_NAME_2_NO_STATEMENT = 
+			"DELETE FROM WebTyphName2No WHERE TyphNo = ?";
 	
 	private static final String INSERT_WEB_TYPH_NAME_2_NO_STATEMENT = 
 			"INSERT INTO WebTyphName2No (TyphNo, TyphNameEng, TyphNameCht) VALUES (?,?,?)";
@@ -27,10 +30,20 @@ private JdbcTemplate jdbcTemplate;
 		}
 	}
 	
+	@Override
+	public void deleteWebTyphName2Nos(Set<WebTyphName2No> webTyphName2Nos) {
+		// TODO Auto-generated method stub
+		for(WebTyphName2No webTyphName2No:webTyphName2Nos) {
+			jdbcTemplate.update(DELETE_WEB_TYPH_NAME_2_NO_STATEMENT,webTyphName2No.getTyphNo());
+		}
+	}
+	
 	@Autowired
 	@Qualifier("jdbcTemplateMSSQL")
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
+
 
 }

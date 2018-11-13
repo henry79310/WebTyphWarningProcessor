@@ -14,6 +14,9 @@ public class WebTyphWarningDaoMSSQLImpl implements WebTyphWarningDao {
 
 	private JdbcTemplate jdbcTemplate;
 	
+	private static final String DELETE_WEB_TYPH_WARNING_STATEMENT = 
+			"DELETE FROM WebTyphWarning WHERE TyphName = ? AND AlarmDate = ? AND State = ?";
+	
 	private static final String INSERT_WEB_TYPH_WARNING_STATEMENT = 
 			"INSERT INTO WebTyphWarning (TyphName, AlarmDate, State, ModifyDate) VALUES (?,?,?,?)";
 	
@@ -28,10 +31,22 @@ public class WebTyphWarningDaoMSSQLImpl implements WebTyphWarningDao {
 		}
 	}
 	
+	@Override
+	public void deleteWebTyphWarnings(Set<WebTyphWarning> webTyphWarnings) {
+		// TODO Auto-generated method stub
+		for(WebTyphWarning webTyphWarning:webTyphWarnings) {
+			jdbcTemplate.update(DELETE_WEB_TYPH_WARNING_STATEMENT,
+					webTyphWarning.getTyphName(),webTyphWarning.getAlarmDate(), 
+					webTyphWarning.getState());
+		}
+	}
+	
 	@Autowired
 	@Qualifier("jdbcTemplateMSSQL")
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
+
 	
 }
